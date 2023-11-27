@@ -31,7 +31,14 @@ const MoviesContextProvider = (props) => {
   //console.log(myReviews);
 
   const addToMustWatch = (movie) => {
-    setMustWatch([...mustWatch, movie.id])
+    let newMustWatch = [];
+    if (!mustWatch.includes(movie.id)){
+      newMustWatch = [...mustWatch, movie.id];
+    }
+    else{
+      newMustWatch = [...mustWatch];
+    }
+    setMustWatch(newMustWatch)
   };
 
   const removeFromMustWatch = (movie) => {
