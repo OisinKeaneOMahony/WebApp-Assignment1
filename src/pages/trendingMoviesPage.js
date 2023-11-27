@@ -23,3 +23,4 @@ const TrendingMoviesPage = () => {
     );
 };
 export default TrendingMoviesPage;
+//adding this as I accidently commited this file in the Inital commit :)

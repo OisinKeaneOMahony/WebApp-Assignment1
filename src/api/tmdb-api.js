@@ -86,6 +86,7 @@ export const getMovies = () => {
     });
   };
 
+  //Also added this in the inital setup 2.0 commit by accident.
   export const getTrending = () => {
     return fetch(
       `https://api.themoviedb.org/3/trending/movie/day?api_key=${process.env.REACT_APP_TMDB_KEY}`

@@ -27,6 +27,7 @@ const SiteHeader = ({ history }) => {
     { label: "Home", path: "/" },
     { label: "Favorites", path: "/movies/favorites" },
     { label: "Upcoming", path: "/movies/upcoming" },
+    // Added in the inital setup 2.0 commit
     { label: "Trending Movies", path: "/movies/trending" },
   ];
 
