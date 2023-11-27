@@ -86,7 +86,6 @@ export const getMovies = () => {
     });
   };
 
-  //Also added this in the inital setup 2.0 commit by accident.
   export const getTrending = () => {
     return fetch(
       `https://api.themoviedb.org/3/trending/movie/day?api_key=${process.env.REACT_APP_TMDB_KEY}`
@@ -98,4 +97,17 @@ export const getMovies = () => {
       }).catch((error) => {
           throw error
       });
+  };
+
+  export const getNowPlaying = () => {
+    return fetch(
+      `https://api.themoviedb.org/3/movie/now_playing?api_key=${process.env.REACT_APP_TMDB_KEY}&language=en-US`
+    ).then((response) => {
+      if (!response.ok){
+        throw new Error(response.json().message);
+      }
+      return response.json();
+    }).catch((error) => {
+        throw error
+    });
   };
