@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { createRoot } from "react-dom/client";
 import { BrowserRouter, Route, Navigate, Routes } from "react-router-dom";
 import HomePage from "./pages/homePage";
@@ -14,6 +14,8 @@ import AddMovieReviewPage from './pages/addMovieReviewPage'
 import TrendingMoviesPage from "./pages/trendingMoviesPage";
 import NowPlayingPage from "./pages/nowPlayingPage";
 import MustWatchPage from "./pages/mustWatchPage";
+import Dashboard from "./components/user/dashboard/dashboard";
+import Login from "./components/user/login/login";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -26,12 +28,15 @@ const queryClient = new QueryClient({
 });
 
 const App = () => {
+  const [token, setToken] = useState();
+  if(!token) return <Login setToken={setToken} />
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <SiteHeader />
         <MoviesContextProvider>
         <Routes>
+          <Route path="/dasboard" element={ <Dashboard /> } />
           <Route path="/movies/must-watch" element={ <MustWatchPage /> } />
           <Route path="/movies/now-playing" element={ <NowPlayingPage /> } />
           <Route path="/movies/trending" element={ <TrendingMoviesPage /> } />
