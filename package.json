@@ -60,6 +60,8 @@
     "eslint-plugin-storybook": "^0.6.15",
     "prop-types": "^15.8.1",
     "storybook": "^7.4.6",
-    "webpack": "^5.89.0"
+    "webpack": "^5.89.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
   }
 }
