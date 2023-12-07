@@ -16,6 +16,7 @@ import NowPlayingPage from "./pages/nowPlayingPage";
 import MustWatchPage from "./pages/mustWatchPage";
 import Login from "./components/user/login/login";
 import { useToken } from './useToken';
+import SimilarMoviesPage from "./pages/similarMoviesPage";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -36,6 +37,7 @@ const App = () => {
         <SiteHeader />
         <MoviesContextProvider>
         <Routes>
+          <Route path="/movies/:id/similar" element={ <SimilarMoviesPage /> } />
           <Route path="/movies/must-watch" element={ <MustWatchPage /> } />
           <Route path="/movies/now-playing" element={ <NowPlayingPage /> } />
           <Route path="/movies/trending" element={ <TrendingMoviesPage /> } />

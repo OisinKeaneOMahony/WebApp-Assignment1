@@ -9,6 +9,8 @@ import Fab from "@mui/material/Fab";
 import Typography from "@mui/material/Typography";
 import Drawer from "@mui/material/Drawer";
 import MovieReviews from "../movieReviews"
+import MoreIcon from '@mui/icons-material/More';
+import { useNavigate } from 'react-router-dom';
 
 
 const root = {
@@ -22,7 +24,8 @@ const root = {
 const chip = { margin: 0.5 };
 
 const MovieDetails = ({ movie }) => {  // Don't miss this!
-  const [drawerOpen, setDrawerOpen] = useState(false);  
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <>
@@ -35,9 +38,7 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
       </Typography>
 
       <Paper 
-        component="ul" 
-        sx={{...root}}
-      >
+        component="ul" sx={{...root}}>
         <li>
           <Chip label="Genres" sx={{...chip}} color="primary" />
         </li>
@@ -71,7 +72,14 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
           </li>
         ))}
       </Paper>
-      
+
+      <Paper component="ul" sx={{ ...root }}>
+        <li>
+          <Chip label="Similar Movies" sx={{ ...chip }} color="primary" />
+        </li>
+        <Chip label="More" onClick={() => navigate(`/movies/${movie.id}/similar`)} icon={<MoreIcon />} sx={{ ...chip }} />
+      </Paper>
+
       <Fab
         color="secondary"
         variant="extended"
