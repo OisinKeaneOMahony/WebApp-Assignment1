@@ -14,12 +14,12 @@ Web App Development 2's React project, which replicates the functionality of pop
 + Favorite movies page
 + Must Watch movies page
 + Trending movies page
-+ Token API, store user tokens and allow them to login
++ Token API, store user token and allow them to login
 
 ## Setup requirements.
-+```
++ ```
 $ npm install.
-+```
++ ```
 
 ## API endpoints.
 
