@@ -18,7 +18,7 @@ Web App Development 2's React project, which replicates the functionality of pop
 
 ## Setup requirements.
 + ```
-$ npm install.
++ $ npm install.
 + ```
 
 ## API endpoints.
